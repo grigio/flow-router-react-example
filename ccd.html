@@ -1,0 +1,29 @@
+<template name="page">
+  <div class="page">
+    <h1>My Blog</h1>
+    <div class="post">
+      {{#if isReady "currentPost"}}
+        <!-- render the blog post -->
+        This is a very cool blog post
+      {{else}}
+        Loading...
+      {{/if}}
+    </div>
+    <div class="categories">
+      <h3> Categories </h3>
+      {{#if isReady}}
+        <!-- render categories after all subscriptions are ready -->
+        Categories: {{getCategories}}
+      {{/if}}
+      <!-- No need to show some loading message -->
+    </div>
+  </div>
+
+  <div class="comments">
+    <!-- Render comments as they came -->
+    <h4>Comments</h4>
+    {{#each getComments}}
+      <div>{{text}}</div>
+    {{/each}}
+  </div>
+</template>
