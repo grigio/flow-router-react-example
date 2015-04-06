@@ -9,25 +9,8 @@ if (Meteor.isClient) {
     },
 
     action: function() {
-      // We render the template with Flow Layout
-      FlowLayout.render('page');
-    }
-  });
-
-  Template.page.helpers({
-    isReady: function(sub) {
-      if(sub) {
-        return FlowRouter.subsReady(sub);
-      } else {
-        return FlowRouter.subsReady();
-      }
-    },
-    getComments: function() {
-      return Comments.find();
-    },
-    getCategories: function() {
-      var categories = Categories.find().fetch();
-      return _.pluck(categories, 'text').join(', ');
+      // We render the template with React
+      React.render(<Page />, document.getElementById('yield'));
     }
   });
 }

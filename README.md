@@ -1,4 +1,6 @@
-## Subscriptions Management with Flow Router
+## Subscriptions Management with Flow Router and React
+
+with `grigio:babel` + `grove:react`
 
 See:
 
